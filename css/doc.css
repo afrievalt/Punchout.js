@@ -1,0 +1,14 @@
+﻿body {
+}
+.syntaxhighlighter {
+    width: 680px;
+    overflow-x: auto;
+    margin-bottom: 1.8em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    border-radius: 0.5em;
+}
+
+.container {
+    padding: 5px;
+}

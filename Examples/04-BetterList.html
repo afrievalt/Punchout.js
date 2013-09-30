@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple List</title>
+</head>
+    <body>
+       <form data-vm="submit$items.push(itemToAdd)$itemToAdd.set('')#addItem">
+            Add item:
+            <input data-vm='value#itemToAdd' data-bind='valueUpdate: "afterkeydown"' />
+            <button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+        </form>
+        <div>
+            <p>Your items:</p>
+            <select multiple="multiple" height="5" width="50" 
+                    data-vm="options=['Fries', 'Eggs Benedict', 'Ham', 'Cheese']#items"
+                    data-vm2="selectedOptions"> </select>
+            <button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+            <button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+        </div>
+
+        <script src="../BoxingRing/speed-bag.js"></script>
+    </body>
+</html>

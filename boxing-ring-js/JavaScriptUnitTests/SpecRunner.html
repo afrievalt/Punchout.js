@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="spec/jasmine/jasmine_favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="spec/jasmine/jasmine.css">
+  <script type="text/javascript" src="spec/jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="spec/jasmine/jasmine-html.js"></script>
+    
+  <!-- include lib files here... -->  
+  <script src="../BoxingRing/lib/JSON-js.js"></script>
+  <script src="../BoxingRing/lib/jquery-2.0.3.js"></script>
+  <script src="../BoxingRing/lib/knockout-2.3.0.debug.js"></script>
+    <script src="../BoxingRing/lib/knockout.punches.js"></script>
+  <!-- include source files here... -->
+  <script src="../BoxingRing/1-parse-data-vm.js"></script>
+  <script src="../BoxingRing/2-get-initial-value.js"></script>
+  <script type="text/javascript" src="../BoxingRing/3-parse-dom.js"></script>
+  <script src="../BoxingRing/4-set-data-bind.js"></script>
+    <script src="../BoxingRing/5-vm-functions.js"></script>
+  <script src="../BoxingRing/6-create-vm.js"></script>
+  <script src="../BoxingRing/7-auto-bind.js"></script>
+
+  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/parse-dom-spec.js"></script>
+  <script src="spec/parse-data-vm-spec.js"></script>
+  <script src="spec/get-initial-value-spec.js"></script>
+  <script src="spec/set-data-bind-spec.js"></script>
+  <script src="spec/5-vm-functions-spec.js"></script>
+  <script src="spec/6-create-vm-spec.js"></script>
+  <script src="spec/7-auto-bind-spec.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+    <body>
+        <div>00000 {{ myId }} 0000000</div>
+        <div id="testArea"></div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Click Counter</title>
+</head>
+    <body>
+        <div>You've clicked <span id="numberOfClicks" data-vm='text=+0'></span> times</div>
+        <button id="registerClick" data-bind="disable: hasClickedTooManyTimes" data-vm='click$numberOfClicks.add(+1)'>Click me</button> 
+         <div id="hasClickedTooManyTimes" data-vm='visible$.logic(numberOfClicks, ">=", +3)'>
+            That's too many clicks! Please stop before you wear out your fingers.
+            <button id="resetClicks" data-vm='click$numberOfClicks.set(+0)'>Reset clicks</button>
+        </div>
+        
+        
+
+        <script src="../BoxingRing/speed-bag.js"></script>
+    </body>
+</html>

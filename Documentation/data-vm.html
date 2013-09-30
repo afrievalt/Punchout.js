@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>what is data-vm</title>
+    <link type="text/css" rel="stylesheet" href="http://knockoutjs.com/js/syntaxhighlighter_3.0.83/styles/shThemeFadeToGrey.css">
+    <link href="../css/doc.css" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+<body>
+    <p>Simply decorate your html with data-vm to do two thing:</p>
+    <ol>
+        <li>Create a <a href="http://knockoutjs.com/documentation/observables.html">view model</a>.</li>
+        <li>Bind to that model by adding data-bind to the element.</li>
+    </ol>
+    <div>This <b>data-vm</b>:</div>
+    <div id="highlighter_240419" class="syntaxhighlighter nogutter  js">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <td class="code">
+                    <div class="container">
+                        <div class="line number1 index0 alt2">
+                            <code class="js plain ">&lt;input id=</code>
+                            <code class="js constants">'firstName'</code>
+                            <code class="js plain ">value=</code>
+                            <code class="js variable ">'Andy'</code>
+                            <code class="js plain keyword  ">data-vm=</code>
+                            <code class="js string">'value'</code>
+                            <code class="js plain">/&gt;</code>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <div>Will 1: create a view model:</div>
+    <div id="Div2" class="syntaxhighlighter nogutter  js">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <td class="code">
+                    <div class="container">
+                        <div class="line number1 index0 alt2">
+                            <code class="js plain ">var <code class="keyword">aViewModel</code> = { </code>
+                        </div>
+                        <div class="line number2 index1 alt2">
+                            <code class="js constants ">firstName</code>
+                            <code class="js plain ">: ko.observable(</code>
+                            <code class="js variable ">'Andy'</code>
+                            <code class="js plain ">)</code>
+                        </div>
+                        <div class="line number3 index2 alt2">
+                            <code class="js plain ">};</code>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <span>and 2: add data-bind:</span>
+    <div id="Div1" class="syntaxhighlighter nogutter  js">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <td class="code">
+                    <div class="container">
+                        <div class="line number1 index0 alt2">
+                            <code class="js plain ">&lt;input </code>
+                            <code class="js keyword ">data-bind='<code class="string">value</code>:
+                                <code class="constants">firstName</code>'
+                            </code>
+                            <code class="js plain "> id='firstName' value='Andy' data-vm='value'/&gt; </code>
+                        </div>
+                        <div class="line number2 index1 alt2">
+                            <br />
+                        </div>
+                        <div class="line number3 index2 alt2">
+                            <code class="js plain ">Notice the:</code>
+                            <code class="js constants ">id,</code>
+                            <code class="js string ">binding,</code>
+                            <code class="js plain ">and</code>
+                            <code class="js variable ">initial value</code><code class="js plain ">.</code>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <h2>id</h2>
+    <p>You can specify an id by either using the elments id as above or you can end your <b>data-vm</b> value with #id like so:</p>
+    <div id="Div3" class="syntaxhighlighter nogutter  js">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <td class="code">
+                    <div class="container">
+                        <div class="line number1 index0 alt2">
+                            <code class="js plain ">&lt;span</code>
+                            <code class="js plain keyword  ">data-vm=</code>
+                            <code class="js plain ">'</code><code class="js string">text</code><code class="js constants">#middleName</code><code class="js plain ">'</code>
+                            <code class="js plain">&gt;</code><code class="js variable ">L</code>
+                            <code class="js plain ">&lt;/span&gt;</code>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <p>The id in <b>data-vm</b> will be used if both the elments id and <b>data-vm</b> id are supplied.</p>
+    <h2>binding</h2>
+    The bindings are used to create the knockout data-bind <a href="http://knockoutjs.com/documentation/introduction.html">bindings</a>.  
+    <h2>initial value</h2>
+    The initial value can be determined by the element and binding as above or can be assigned in the <b>data-vm</b> as so: 
+     <div id="Div4" class="syntaxhighlighter nogutter  js">
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <td class="code">
+                    <div class="container">
+                        <div class="line number1 index0 alt2">
+                            <code class="js plain ">&lt;span</code>
+                            <code class="js plain keyword  ">data-vm=</code>
+                            <code class="js plain ">'</code><code class="js string">html</code><code class="js variable ">="Frievalt"</code><code class="js constants">#lastName</code><code class="js plain ">'</code>
+                            <code class="js plain">&gt;</code><code class="js variable ">L</code>
+                            <code class="js plain ">&lt;/span&gt;</code>
+                        </div>
+                    </div>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
